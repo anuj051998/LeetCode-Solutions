@@ -16,25 +16,25 @@ using System.Linq;
 */
 public partial class Solution
 {
-    public static List<int> GetItems(TreeNode node, List<int> li)
+    public static IList<int> GetItems(TreeNode node, IList<int> li)
     {
 
-        if (node == null)
+        if (node is null)
         {
             li.Add(0);
             return new List<int>();
         }
 
-        GetItems(node.left, li);
-        GetItems(node.right, li);
-        li.Add(node.val);
+        _ = GetItems(node.Left, li);
+        _ = GetItems(node.Right, li);
+        li.Add(node.Val);
         return li;
     }
 
     public bool IsSameTree(TreeNode p, TreeNode q)
     {
-        List<int> li1 = GetItems(p, new List<int>());
-        List<int> li2 = GetItems(q, new List<int>());
-        return li1.Count() == li2.Count() && li1.SequenceEqual(li2);
+        IList<int> li1 = GetItems(p, new List<int>());
+        IList<int> li2 = GetItems(q, new List<int>());
+        return li1.Count == li2.Count && li1.SequenceEqual(li2);
     }
 }

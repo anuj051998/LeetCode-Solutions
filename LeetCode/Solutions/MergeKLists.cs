@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using System.Linq;
 
-partial class Solution
+public partial class Solution
 {
     private IList<int> Traverse(ListNode node)
     {
         IList<int> li = new List<int>();
-        while (node != null)
+        while (node is not null)
         {
             li.Add(node.val);
             node = node.next;
@@ -20,7 +20,7 @@ partial class Solution
             ListNode temp = null;
             return temp;
         }
-        List<int> li = new List<int>();
+        List<int> li = new();
         for (int i = 0; i < lists.Length; i++)
         {
             li.AddRange(Traverse(lists[i]));
@@ -33,11 +33,18 @@ partial class Solution
         }
         li.Sort();
         li.Reverse();
-        ListNode node = new ListNode { val = li[0], next = null };
-        for (int i = 1; i < li.Count(); i++)
+        ListNode node = new ListNode()
         {
-            ListNode tempNode = new ListNode { val = li[i] };
-            tempNode.next = node;
+            val = li[0],
+            next = null
+        };
+        for (int i = 1; i < li.Count; i++)
+        {
+            ListNode tempNode = new ListNode()
+            {
+                val = li[i],
+                next = node
+            };
             node = tempNode;
         }
         return node;

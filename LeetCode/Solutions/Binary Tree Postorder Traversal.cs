@@ -2,16 +2,16 @@ using System.Collections.Generic;
 
 public partial class Solution
 {
-    public static List<int> Traverse_POST_ORDER(TreeNode node, List<int> li)
+    public static IList<int> Traverse_POST_ORDER(TreeNode node, IList<int> li)
     {
-        if (node == null)
+        if (node is null)
         {
             return new List<int>();
         }
 
-        Traverse_POST_ORDER(node.left, li);
-        Traverse_POST_ORDER(node.right, li);
-        li.Add(node.val);
+        _ = Traverse_POST_ORDER(node.Left, li);
+        _ = Traverse_POST_ORDER(node.Right, li);
+        li.Add(node.Val);
         return li;
     }
 

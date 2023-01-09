@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 
 public partial class Solution
 {
@@ -8,6 +9,6 @@ public partial class Solution
         char[] s2 = t.ToCharArray();
         Array.Sort(s1);
         Array.Sort(s2);
-        return string.Join("", s2) == string.Join("", s1);
+        return s1.SequenceEqual(s2);
     }
 }

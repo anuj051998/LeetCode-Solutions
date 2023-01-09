@@ -2,21 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-public class ListNode {
-    public int val;
-    public ListNode next;
-    public ListNode(int val=0, ListNode next=null) {
-        this.val = val;
-        this.next = next;
-    }
-}
-
 public partial class Solution
 {
     public static int[] GetItem(ListNode node)
     {
-        List<int> li = new List<int>();
-        while (node != null)
+        IList<int> li = new List<int>();
+        while (node is not null)
         {
             li.Add(node.val);
             node = node.next;
@@ -30,7 +21,7 @@ public partial class Solution
         Array.Reverse(arr1);
         Array.Reverse(arr2);
         int carry = 0, lenOne = arr1.Length, lenTwo = arr2.Length;
-        List<int> res = new List<int>();
+        IList<int> res = new List<int>();
         for (int indexOne = lenOne - 1, indexTwo = lenTwo - 1; indexOne >= 0 || indexTwo >= 0; indexOne--, indexTwo--)
         {
             int sum = carry;
@@ -52,11 +43,15 @@ public partial class Solution
             res.Add(carry);
         }
 
-        res.Reverse();
-        ListNode li = new ListNode() { val = res[0], next = null };
-        for (int i = 1; i < res.Count(); i++)
+        _ = res.Reverse();
+        ListNode li = new ListNode()
         {
-            ListNode tempNode = new ListNode
+            val = res[0],
+            next = null
+        };
+        for (int i = 1; i < res.Count; i++)
+        {
+            ListNode tempNode = new ListNode()
             {
                 val = res[i],
                 next = li

@@ -7,7 +7,7 @@ public partial class Solution
         int max = 0;
         for (int i = 0; i < sentences.Length; i++)
         {
-            int count = sentences[i].Split(' ').Count();
+            int count = sentences[i].Split(' ').Length;
             if (count > max)
             {
                 max = count;

@@ -1,23 +1,12 @@
-
 using System.Collections.Generic;
 using System.Linq;
-/**
-* Definition for singly-linked list.
-* public class ListNode {
-*     public int val;
-*     public ListNode next;
-*     public ListNode(int val=0, ListNode next=null) {
-*         this.val = val;
-*         this.next = next;
-*     }
-* }
-*/
+
 public partial class Solution
 {
     public static List<int> GetItemsForMergeTwoList(ListNode node)
     {
         List<int> li = new List<int>();
-        while (node != null)
+        while (node is not null)
         {
             li.Add(node.val);
             node = node.next;
@@ -34,8 +23,13 @@ public partial class Solution
             return list1;
         }
 
-        ListNode node = new ListNode() { val = li[li.Count() - 1], next = null };
-        for (int i = li.Count() - 2; i >= 0; i--)
+        ListNode node = new ListNode()
+        {
+            val = li[^1],
+            next = null
+        };
+
+        for (int i = li.Count - 2; i >= 0; i--)
         {
             ListNode tempNode = new ListNode()
             {

@@ -8,9 +8,9 @@ public partial class Solution
         s = s.ToLower();
         for (int i = 0; i < s.Length; i++)
         {
-            if (s[i] >= 'a' && s[i] <= 'z' || s[i] >= '0' && s[i] <= '9')
+            if (s[i] is (>= 'a' and <= 'z') or (>= '0' and <= '9'))
             {
-                op.Append(s[i]);
+                _ = op.Append(s[i]);
             }
         }
         return op.ToString();

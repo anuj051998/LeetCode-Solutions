@@ -5,7 +5,7 @@ public partial class Solution
 {
     public int MaxPower(string s)
     {
-        List<int> li = new List<int>();
+        IList<int> li = new List<int>();
         for (int i = 0; i < s.Length; i++)
         {
             int count = 0;

@@ -6,8 +6,10 @@ public partial class Solution
     {
         foreach (int i in nums)
         {
-            if (nums.Where(x => x == i).Count() == 1)
+            if (nums.Count(x => x == i) == 1)
+            {
                 return i;
+            }
         }
         return 0;
     }

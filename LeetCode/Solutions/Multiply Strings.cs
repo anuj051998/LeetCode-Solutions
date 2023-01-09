@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 public partial class Solution
 {
@@ -31,11 +32,11 @@ public partial class Solution
     }
     public string Multiply(string num1, string num2)
     {
-        List<string> li = new List<string>();
-        string n = "";
+        List<string> li = new();
+        StringBuilder n = new();
         for (int i = num1.Length - 1; i >= 0; i--)
         {
-            List<int> temporary = new List<int>();
+            List<int> temporary = new();
             int carry = 0;
             for (int j = num2.Length - 1; j >= 0; j--)
             {
@@ -52,20 +53,23 @@ public partial class Solution
                 }
             }
             if (carry != 0)
+            {
                 temporary.Add(carry);
+            }
+
             temporary.Reverse();
             string res = "";
             temporary.ForEach(x => res += x);
             res += n.ToString().Replace("1", "");
-            n += '0';
+            _ = n.Append('0');
             li.Add(res);
         }
         string op = "0";
-        for (int i = 0; i < li.Count(); i++)
+        for (int i = 0; i < li.Count; i++)
         {
             op = AddString(op, li[i].ToString());
         }
 
-        return op.Where(x => x == '0').Count() == op.Length ? "0" : op;
+        return op.Count(x => x == '0') == op.Length ? "0" : op;
     }
 }

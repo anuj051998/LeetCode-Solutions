@@ -7,7 +7,7 @@ public partial class Solution
         int total = 0;
         for (int i = 0; i < jewels.Length; i++)
         {
-            total += stones.Where(x => x == jewels[i]).Count();
+            total += stones.Count(x => x == jewels[i]);
         }
         return total;
     }

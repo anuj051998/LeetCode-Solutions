@@ -1,12 +1,16 @@
 using System.Linq;
 
-public partial class Solution {
-    public int MajorityElement(int[] nums) {
-        foreach(int item in nums.Distinct())
+public partial class Solution
+{
+    public int MajorityElement(int[] nums)
+    {
+        foreach (int item in nums.Distinct())
+        {
+            if (nums.Count(x => x == item) > (nums.Length / 2))
             {
-                if (nums.Where(x => x == item).Count() > (nums.Count() / 2))
-                    return item;
+                return item;
             }
-            return 0;
+        }
+        return 0;
     }
 }

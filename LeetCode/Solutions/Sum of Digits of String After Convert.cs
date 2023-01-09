@@ -8,7 +8,7 @@ public partial class Solution
         StringBuilder builder = new StringBuilder();
         for (int i = 0; i < s.Length; i++)
         {
-            builder.Append(((int)s[i] - 96));
+            _ = builder.Append(s[i] - 96);
         }
         return builder.ToString();
     }

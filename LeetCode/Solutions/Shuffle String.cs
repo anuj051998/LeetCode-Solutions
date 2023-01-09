@@ -5,7 +5,7 @@ public partial class Solution
 {
     public string RestoreString(string s, int[] indices)
     {
-        Dictionary<int, char> di = new Dictionary<int, char>();
+        IDictionary<int, char> di = new Dictionary<int, char>();
         for (int i = 0; i < indices.Length; i++)
         {
             di.Add(indices[i], s[i]);

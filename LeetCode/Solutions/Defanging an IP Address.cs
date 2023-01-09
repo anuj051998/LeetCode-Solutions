@@ -7,14 +7,7 @@ public partial class Solution
         StringBuilder builder = new StringBuilder();
         for (int i = 0; i < address.Length; i++)
         {
-            if (address[i] == '.')
-            {
-                builder.Append("[.]");
-            }
-            else
-            {
-                builder.Append(address[i]);
-            }
+            _ = address[i] == '.' ? builder.Append("[.]") : builder.Append(address[i]);
         }
         return builder.ToString();
     }

@@ -9,7 +9,7 @@ public partial class Solution
             return false;
         }
 
-        Stack stack = new Stack();
+        Stack stack = new();
         foreach (char x in s)
         {
             if ("{[(".Contains(x))
@@ -24,16 +24,7 @@ public partial class Solution
                 }
 
                 char popItem = (char)stack.Pop();
-                char temp;
-                if (x == ')')
-                {
-                    temp = '(';
-                }
-                else
-                {
-                    temp = x == '}' ? '{' : '[';
-                }
-
+                char temp = x == ')' ? '(' : x == '}' ? '{' : '[';
                 if (popItem != temp)
                 {
                     return false;

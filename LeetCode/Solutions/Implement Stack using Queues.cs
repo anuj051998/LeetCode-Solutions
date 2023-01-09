@@ -1,30 +1,34 @@
-using System;
+public class MyStack
+{
 
-public class MyStack {
-    
     private readonly object[] Queue;
     private int top;
-    public MyStack() {
-        Queue = new Object[999];
+    public MyStack()
+    {
+        Queue = new object[999];
         top = -1;
     }
-    
-    public void Push(int x) {
+
+    public void Push(int x)
+    {
         Queue[++top] = x;
     }
-    
-    public int Pop() {
+
+    public int Pop()
+    {
         int item = (int)Queue[top];
         Queue[top--] = null;
         return item;
-        
+
     }
-    
-    public int Top() {
+
+    public int Top()
+    {
         return (int)Queue[top];
     }
-    
-    public bool Empty() {
+
+    public bool Empty()
+    {
         return top == -1;
     }
 }

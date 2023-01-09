@@ -20,8 +20,9 @@ public partial class Solution
         {
             return false;
         }
-        foreach (int item in nums)
+        for (int i = 0; i < nums.Length; i++)
         {
+            int item = nums[i];
             if (num % item != 0)
             {
                 return false;

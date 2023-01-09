@@ -8,7 +8,7 @@ public partial class Solution
         int[] ans = new int[n];
         for (int i = 0; i < n; i++)
         {
-            ans[i] = nums.Where(x => x < nums[i]).Count();
+            ans[i] = nums.Count(x => x < nums[i]);
         }
         return ans;
     }

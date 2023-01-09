@@ -4,12 +4,15 @@ public partial class Solution
 {
     public char FindTheDifference(string s, string t)
     {
-        foreach (char item in t)
+        for (int i = 0; i < t.Length; i++)
         {
-            int count = t.Where(x => x == item).Count();
-            int countTwo = s.Where(x => x == item).Count();
+            char item = t[i];
+            int count = t.Count(x => x == item);
+            int countTwo = s.Count(x => x == item);
             if (count > countTwo)
+            {
                 return item;
+            }
         }
         return ' ';
     }

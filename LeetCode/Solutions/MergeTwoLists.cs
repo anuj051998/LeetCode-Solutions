@@ -1,13 +1,11 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 
 public partial class Solution
 {
     public static List<int> GetItems(ListNode node)
     {
-        List<int> li = new List<int>();
-        while (node != null)
+        List<int> li = new();
+        while (node is not null)
         {
             li.Add(node.val);
             node = node.next;
@@ -18,8 +16,12 @@ public partial class Solution
     {
         List<int> li = GetItems(list1);
         li.AddRange(GetItems(list2));
-        ListNode node = new ListNode() { val = li[0], next = null };
-        for (int i = 1; i < li.Count(); i++)
+        ListNode node = new ListNode()
+        {
+            val = li[0],
+            next = null
+        };
+        for (int i = 1; i < li.Count; i++)
         {
             ListNode tempNode = new ListNode()
             {

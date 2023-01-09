@@ -16,8 +16,8 @@ public partial class Solution
 {
     public ListNode ReverseList(ListNode head)
     {
-        List<int> li = new List<int>();
-        while (head != null)
+        List<int> li = new();
+        while (head is not null)
         {
             li.Add(head.val);
             head = head.next;
@@ -27,10 +27,14 @@ public partial class Solution
             return head;
         }
 
-        ListNode tempNode = new ListNode() { val = li[0], next = null };
-        for (int i = 1; i < li.Count(); i++)
+        ListNode tempNode = new ListNode()
         {
-            ListNode temp = new ListNode
+            val = li[0],
+            next = null
+        };
+        for (int i = 1; i < li.Count; i++)
+        {
+            ListNode temp = new ListNode()
             {
                 val = li[i],
                 next = tempNode

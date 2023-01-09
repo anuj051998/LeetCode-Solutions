@@ -1,35 +1,33 @@
-﻿namespace LeetCode
+﻿
+public partial class Solution
 {
-    public partial class Solution
+    public int NumMatchingSubseq(string s, string[] words)
     {
-        public int NumMatchingSubseq(string s, string[] words)
+        int final = 0;
+
+        for (int i = 0; i < words.Length; i++)
         {
-            int final = 0;
-
-            for (int i = 0; i < words.Length; i++)
+            int a = 0;
+            int b = 0;
+            string current = words[i];
+            while (b < current.Length && a < s.Length)
             {
-                int a = 0;
-                int b = 0;
-                string current = words[i];
-                while (b < current.Length && a < s.Length)
+                if (s[a] == current[b])
                 {
-                    if (s[a] == current[b])
-                    {
-                        a++;
-                        b++;
-                    }
-                    else
-                    {
-                        a++;
-                    }
+                    a++;
+                    b++;
                 }
-                if (b >= current.Length)
+                else
                 {
-
-                    final = final + 1;
+                    a++;
                 }
             }
-            return final;
+            if (b >= current.Length)
+            {
+
+                final++;
+            }
         }
+        return final;
     }
 }

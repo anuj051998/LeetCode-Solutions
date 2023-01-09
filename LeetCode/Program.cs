@@ -1,10 +1,14 @@
 ﻿using System;
 
-
-class Program
+namespace LeetCode
 {
-    static void Main(string[] args)
+    internal class Program
     {
-        Console.ReadKey();
+        protected Program() { }
+
+        private static void Main()
+        {
+            Console.WriteLine("Hello World!");
+        }
     }
 }

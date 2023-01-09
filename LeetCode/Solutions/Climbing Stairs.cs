@@ -1,6 +1,6 @@
 public partial class Solution
 {
-    static int Fibonacci(int n)
+    private int Fibonacci(int n)
     {
         if (n < 2)
         {
