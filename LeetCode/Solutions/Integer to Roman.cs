@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 public partial class Solution
 {
@@ -51,13 +53,13 @@ public partial class Solution
         {
             ret.Append(fiveChar);
             for (int i = 0; i < digit - 5; ++i)
-            {
+{
                 ret.Append(oneChar);
             }
             return;
         }
         if (digit == 9)
-        {
+    {
             ret.Append(oneChar);
             ret.Append(tenChar);
             return;
