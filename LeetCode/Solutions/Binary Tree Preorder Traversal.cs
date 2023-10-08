@@ -22,9 +22,9 @@ public partial class Solution
             return new List<int>();
         }
 
-        li.Add(node.Val);
-        _ = Traverse_POST_ORDER(node.Left, li);
-        _ = Traverse_POST_ORDER(node.Right, li);
+        li.Add(node.val);
+        _ = Traverse_PRE_ORDER(node.left, li);
+        _ = Traverse_PRE_ORDER(node.right, li);
         return li;
     }
     public IList<int> PreorderTraversal(TreeNode root)

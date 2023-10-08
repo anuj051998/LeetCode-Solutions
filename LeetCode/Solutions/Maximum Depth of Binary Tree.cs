@@ -1,14 +1,14 @@
 public class TreeNode
 {
-    public int Val { get; set; }
-    public TreeNode Left { get; set; }
-    public TreeNode Right { get; set; }
+    public int val { get; set; }
+    public TreeNode left { get; set; }
+    public TreeNode right { get; set; }
 
     public TreeNode(int val = 0, TreeNode left = null, TreeNode right = null)
     {
-        Val = val;
-        Left = left;
-        Right = right;
+        this.val = val;
+        this.left = left;
+        this.right = right;
     }
 }
 
@@ -22,8 +22,8 @@ public partial class Solution
         }
         else
         {
-            int lDepth = CheckDepth(node.Left);
-            int rDepth = CheckDepth(node.Right);
+            int lDepth = CheckDepth(node.left);
+            int rDepth = CheckDepth(node.right);
             return lDepth > rDepth ? lDepth + 1 : rDepth + 1;
         }
     }

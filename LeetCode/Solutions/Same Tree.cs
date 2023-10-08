@@ -25,9 +25,9 @@ public partial class Solution
             return new List<int>();
         }
 
-        _ = GetItems(node.Left, li);
-        _ = GetItems(node.Right, li);
-        li.Add(node.Val);
+        _ = GetItems(node.left, li);
+        _ = GetItems(node.right, li);
+        li.Add(node.val);
         return li;
     }
 

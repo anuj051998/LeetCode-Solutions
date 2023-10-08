@@ -5,7 +5,7 @@ namespace LeetCodeTest
 {
     public partial class LeetCodeSolution
     {
-        [Test]
+        [TestRunner]
         public void MAX_ICECREAM_BARS_Test()
         {
             IList<(int[], int, int)> mockData = MAX_ICECREAM_BARS_TestCaseMockData();

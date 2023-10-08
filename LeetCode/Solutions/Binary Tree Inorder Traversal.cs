@@ -9,9 +9,9 @@ public partial class Solution
             return new List<int>();
         }
 
-        _ = Traverse_InOrder(node.Left, li);
-        li.Add(node.Val);
-        _ = Traverse_InOrder(node.Right, li);
+        _ = Traverse_InOrder(node.left, li);
+        li.Add(node.val);
+        _ = Traverse_InOrder(node.right, li);
         return li;
     }
     public IList<int> InorderTraversal(TreeNode root)

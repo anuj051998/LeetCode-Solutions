@@ -9,9 +9,9 @@ public partial class Solution
             return new List<int>();
         }
 
-        _ = Traverse_POST_ORDER(node.Left, li);
-        _ = Traverse_POST_ORDER(node.Right, li);
-        li.Add(node.Val);
+        _ = Traverse_POST_ORDER(node.left, li);
+        _ = Traverse_POST_ORDER(node.right, li);
+        li.Add(node.val);
         return li;
     }
 

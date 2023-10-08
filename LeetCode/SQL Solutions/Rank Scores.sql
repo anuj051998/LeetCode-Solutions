@@ -1,0 +1,5 @@
+﻿/* Write your T-SQL query statement below */
+SELECT SCORE, RANK FROM (
+    SELECT *, DENSE_RANK() OVER (ORDER BY SCORE DESC) AS RANK 
+    FROM SCORES
+) AS RECORDS

@@ -5,7 +5,7 @@ namespace LeetCodeTest
 {
     public partial class LeetCodeSolution
     {
-        [Test]
+        [TestRunner(maxSpaceBytes: 500, maxTimeMilliseconds: 15, Name = "Minimum Rounds Complete All Tasks")]
         public void Minimum_Rounds_Complete_All_Tasks_Test()
         {
             IList<(int[], int)> mockData = TestCaseMockData();
