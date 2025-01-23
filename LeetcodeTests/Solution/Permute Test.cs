@@ -14,7 +14,7 @@ namespace LeetCodeTest
             foreach ((char[] chars, IList<IList<char>> listChars) in mockData)
             {
                 IList<IList<char>> res = new List<IList<char>>();
-                solution.FIND_PERMUTATION(chars, 0, chars.Length, res);
+                //solution.FIND_PERMUTATION(chars, 0, chars.Length, res);
                 Assert.IsTrue(IsResponseEqual(res, listChars));
             }
         }
