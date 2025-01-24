@@ -20,7 +20,6 @@
     <PackageReference Include="NUnit.Test.Enhanced" Version="1.0.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.17.0" />
     <PackageReference Include="coverlet.collector" Version="3.0.2" />
-    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
     <PackageReference Include="xunit.extensibility.core" Version="2.4.2" />
   </ItemGroup>
 
